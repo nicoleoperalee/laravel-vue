@@ -9,8 +9,8 @@
             <!-- <label for="checkbox">{{ item.completed }}</label> -->
         <span :class="[item.completed ? 'completed' :'' ,'itemText']">{{ item.name}}</span>
         <span class="completed_at">{{item.completed_at}}</span>
-       <button @click="removeItem" class="trashcan">del
-            <!-- <font-awsome-icon icon="trash"/> -->
+       <button @click="removeItem" class="trashcan">
+            <FontAwesomeIcon icon="trash"/>
         </button> 
     </div>
 </template>

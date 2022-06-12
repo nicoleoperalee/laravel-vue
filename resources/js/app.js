@@ -8,10 +8,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
 library.add(faPlusSquare,faTrash)
-library.add(faTrash)
+
 
 export const app = createApp(App)
 
 createApp(App)
-    .component("font-awesome-icon", FontAwesomeIcon)
+    .component("FontAwesomeIcon", FontAwesomeIcon)
     .mount('#app')
