@@ -30,6 +30,9 @@ export default{
         getList(){
             axios.get('api/items')
                 .then(res =>{
+                    res.data.forEach((value) => {
+                            value.completed = value.completed ? true:false;
+                        })
                     this.items = res.data
                 }).catch(err=>{
                     console.log(err)

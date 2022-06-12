@@ -4,8 +4,9 @@
             type="checkbox" 
             @change="updateCheck()"
             v-model="item.completed"
-            v-bind:id="item.id"
+            id="checkbox"
             />
+            <!-- <label for="checkbox">{{ item.completed }}</label> -->
         <span :class="[item.completed ? 'completed' :'' ,'itemText']">{{ item.name}}</span>
         <span class="completed_at">{{item.completed_at}}</span>
        <button @click="removeItem" class="trashcan">del
@@ -22,14 +23,16 @@ export default{
 props:['item'],
 methods:{
     updateCheck(){
+       
         axios.put('api/item/'+this.item.id,{
             item:this.item
         }).then(res =>{
             if(res.status == 200){
+                
                 this.$emit('itemchanged')
             }
         }).catch(err=>{
-            console.log(err)
+            console.log('qwert'+err)
         })
     },
     removeItem(){
