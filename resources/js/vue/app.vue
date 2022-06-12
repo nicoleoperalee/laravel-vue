@@ -2,7 +2,7 @@
     <div class="todoListContainer">
         <div class="heading">
             <h2 id="title">Todo List</h2>
-            <addItemForm/>
+            <addItemForm  v-on:reloadlist="getList()"/>
         </div>
         <listView 
             :items="items"
@@ -32,7 +32,6 @@ export default{
                 .then(res =>{
                     this.items = res.data
                 }).catch(err=>{
-                    console.log('ohoh')
                     console.log(err)
                 })
         },

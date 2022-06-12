@@ -4,9 +4,11 @@
             type="checkbox" 
             @change="updateCheck()"
             v-model="item.completed"
+            v-bind:id="item.id"
             />
         <span :class="[item.completed ? 'completed' :'' ,'itemText']">{{ item.name}}</span>
-        <button @click="removeItem" class="trashcan">del
+        <span class="completed_at">{{item.completed_at}}</span>
+       <button @click="removeItem" class="trashcan">del
             <!-- <font-awsome-icon icon="trash"/> -->
         </button> 
     </div>
@@ -65,5 +67,8 @@ methods:{
     border: none;
     color:#ff0000;
     outline: none;
+}
+.completed_at{
+    font-size: 0.3rem;
 }
 </style>
