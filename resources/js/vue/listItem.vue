@@ -6,7 +6,6 @@
             v-model="item.completed"
             id="checkbox"
             />
-            <!-- <label for="checkbox">{{ item.completed }}</label> -->
         <span :class="[item.completed ? 'completed' :'' ,'itemText']">{{ item.name}}</span>
         <span class="completed_at">{{item.completed_at}}</span>
        <button @click="removeItem" class="trashcan">
